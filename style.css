@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&family=Italiana&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #181515;
+  color: #e7ddce;
+  font-family: "DM Mono";
+  cursor: crosshair;
+}
+nav {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0 5vw;
+  border-bottom: 1px solid #5d554c;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+nav span:first-child {
+  font: 32px Italiana;
+  margin-right: auto;
+}
+nav a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  color: #e7ddce;
+  background: transparent;
+  border: 1px solid #e7ddce;
+  padding: 10px 16px;
+  font: 10px "DM Mono";
+}
+main {
+  min-height: calc(100vh - 78px);
+  position: relative;
+  padding: 11vw 10vw;
+}
+.side {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  writing-mode: vertical-rl;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+section {
+  position: relative;
+  z-index: 2;
+}
+section p {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+}
+h1 {
+  font: clamp(70px, 12vw, 175px)/0.75 Italiana;
+  margin: 45px 0 0;
+  letter-spacing: -0.04em;
+}
+h1 em {
+  font-family: Italiana;
+  color: #a99b75;
+}
+.second {
+  margin-left: 12vw;
+}
+.note {
+  width: 230px;
+  font-size: 10px;
+  line-height: 1.8;
+  margin: 45px 0 0 14vw;
+}
+figure {
+  position: absolute;
+  right: 11vw;
+  top: 10%;
+  width: min(31vw, 430px);
+  margin: 0;
+  z-index: 1;
+}
+figure img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  filter: saturate(1.15) contrast(1.05);
+}
+figcaption {
+  font-size: 9px;
+  margin-top: 10px;
+  letter-spacing: 0.14em;
+}
+.cursor {
+  position: fixed;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: #c6aa79;
+  color: #181515;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 9px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+@media (max-width: 700px) {
+  nav span:nth-child(2),
+  nav a {
+    display: none;
+  }
+  main {
+    padding: 18vw 10vw;
+  }
+  .side {
+    display: none;
+  }
+  h1 {
+    font-size: 82px;
+  }
+  .second {
+    margin-left: 0;
+  }
+  .note {
+    margin-left: 0;
+  }
+  figure {
+    top: auto;
+    bottom: 7%;
+    right: 10%;
+    width: 48vw;
+  }
+  figure img {
+    height: 36vh;
+  }
+}
+
+.archive {
+  padding: 9vw 10vw;
+  background: #24201e;
+  border-top: 1px solid #5d554c;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+.archive > div {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  margin-top: 28px;
+}
+.archive button {
+  position: relative;
+  min-width: 180px;
+  height: 260px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+.archive img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+.archive span {
+  position: absolute;
+  bottom: 10px;
+  left: 11px;
+  color: #e7ddce;
+}
+.archive button:hover img {
+  filter: none;
+  transform: scale(1.05);
+}
+dialog {
+  background: #181515;
+  color: #e7ddce;
+  border: 1px solid #a99b75;
+  padding: 45px;
+  max-width: 420px;
+  font: 10px "DM Mono";
+  letter-spacing: 0.1em;
+}
+dialog h2 {
+  font: 44px/1 Italiana;
+  letter-spacing: 0;
+  margin: 18px 0;
+}
+dialog a {
+  color: #e7ddce;
+}
+dialog button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  border: 0;
+  font-size: 20px;
+}
+dialog::backdrop {
+  background: #000b;
+}
