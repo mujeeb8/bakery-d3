@@ -26,12 +26,12 @@ document.querySelector("figure").animate(
 );
 document.body.insertAdjacentHTML(
   "beforeend",
-  `<section class="archive"><p>EL ARCHIVO DAYI'S / ELIGE UN ESTUDIO</p><div>${images.map((image, i) => `<button data-image="${image}"><img src="../assets/${image}" alt="Estudio de pastel ${i + 1}"><span>${String(i + 1).padStart(2, "0")}</span></button>`).join("")}</div></section><dialog><button>×</button><p>PARA PEDIDOS PRIVADOS EN MIAMI</p><h2>Comienza tu historia dulce.</h2><a href="https://www.instagram.com/cakes_bydayi/" target="_blank">CONSULTA EN INSTAGRAM ↗</a></dialog>`,
+  `<section class="archive"><p>EL ARCHIVO DAYI'S / ELIGE UN ESTUDIO</p><div>${images.map((image, i) => `<button data-image="${image}"><img src="assets/${image}" alt="Estudio de pastel ${i + 1}"><span>${String(i + 1).padStart(2, "0")}</span></button>`).join("")}</div></section><dialog><button>×</button><p>PARA PEDIDOS PRIVADOS EN MIAMI</p><h2>Comienza tu historia dulce.</h2><a href="https://www.instagram.com/cakes_bydayi/" target="_blank">CONSULTA EN INSTAGRAM ↗</a></dialog>`,
 );
 document.querySelectorAll(".archive button").forEach((button) =>
   button.addEventListener("click", () => {
     document.querySelector("figure img").src =
-      `../assets/${button.dataset.image}`;
+      `assets/${button.dataset.image}`;
     document.querySelector("figure").scrollIntoView({ behavior: "smooth" });
   }),
 );
